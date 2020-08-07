@@ -52,3 +52,38 @@ class Child extends Parent {
 const firstChild = new Child("Jaden Smith");
 console.log(firstChild);
 console.log(firstChild.getBothName());
+
+//* destructuring array
+const people = ["John", "Jane", "Tom", "Tony", "Steve", "Thor"];
+
+const [...AllPerson] = people; // getting whole array
+console.log(AllPerson);
+
+const [a, b, c] = people; // destructuring from first value
+console.log(a, b, c);
+
+//* destructuring object
+const person = {
+	name: "John Doe",
+	age: 25,
+	job: "Time Traveler",
+	father: "John Doe",
+	mother: "Jane Doe",
+};
+
+const { mother } = person; // destructuring single property
+console.log(mother);
+const { name, age } = person; // destructuring multiple property
+console.log(name, age);
+
+//* destructuring complex object
+const person2 = {
+	name: "Jane Doe",
+	info: {
+		age: 28,
+		job: "Time Traveling",
+	},
+};
+
+const { job } = person2.info;
+console.log(job);
